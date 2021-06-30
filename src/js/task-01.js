@@ -1,14 +1,13 @@
 const menuItemsByClass = document.querySelectorAll(".item");
 console.log(`В списке ${menuItemsByClass.length} категории.`); // ..
 
-const dirtyMultiply = (array) => {
-        const title = document.querySelectorAll("h2").forEach(num => console.log(num.textContent));;
-        const items = menuItemsByClass.lastElementChild.forEach(num => console.log(num.length));;
-  }
-;
-
-dirtyMultiply(menuItemsByClass);
-
+for (let i = 0; i < menuItemsByClass.length; i += 1) {
+  const title = menuItemsByClass[i].firstElementChild;
+  const category = menuItemsByClass[i].lastElementChild;
+  const item = category.querySelectorAll("li")
+  console.log(`Категория: ${title.textContent}`);
+  console.log(`Количество элементов: ${item.length}`);
+}
 
 
 
